@@ -1,0 +1,2 @@
+CREATE DATABASE graphql_db;
+GRANT ALL PRIVILEGES ON DATABASE graphql_db TO postgres;
