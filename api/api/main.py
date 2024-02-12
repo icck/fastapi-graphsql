@@ -9,6 +9,10 @@ class Query:
     def hello(self) -> str:
         return "Hello World"
 
+    @strawberry.field
+    def bye(self) -> str:
+        return "Goodbye World"
+
 
 schema = strawberry.Schema(Query)
 
