@@ -14,7 +14,18 @@ class Query:
         return "Goodbye World"
 
 
-schema = strawberry.Schema(Query)
+@strawberry.type
+class Mutation:
+    @strawberry.mutation
+    def thousand(self, number: int) -> int:
+        return number * 1000
+
+    @strawberry.mutation
+    def hundred(self, number: int) -> int:
+        return number * 100
+
+
+schema = strawberry.Schema(Query, Mutation)
 
 graphql_app = GraphQLRouter(schema)
 
