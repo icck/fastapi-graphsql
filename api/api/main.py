@@ -31,6 +31,12 @@ graphql_app = GraphQLRouter(schema)
 
 app = FastAPI()
 
+
+@app.get("/")
+def index():
+    return {"message": "Hello World"}
+
+
 app.include_router(graphql_app, prefix="/graphql")
 
 
